@@ -11,7 +11,6 @@ public abstract class Player extends Character
     
     // Player inventory
     protected ArrayList<Item> backpack = new ArrayList<>();
-    protected ArrayList<Item> potions = new ArrayList<>();
     protected Item equipped;                // The equipped item
     protected Item p;
     protected boolean alive;
