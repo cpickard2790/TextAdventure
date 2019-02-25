@@ -100,11 +100,12 @@ public class Warrior extends Player
     
     /**
      * specialAttacks method sets the Warriors special attacks
-     * @param enemy The enemy to do special attack on
+     * @param p The player character
+     * @param e The enemy to do special attack on
      */
     
     @Override
-    public void specialAttacks(Enemy enemy)
+    public void specialAttacks(Player p, Enemy e)
     {
         String input;
         Scanner keyboard = new Scanner(System.in);
@@ -114,7 +115,7 @@ public class Warrior extends Player
         {
             case "1":
                 if (rage >= 3)
-                    heavyStrike(enemy);
+                    heavyStrike(e);
                 else
                     System.out.println("You dont have enough rage!");
                 break;
@@ -143,6 +144,8 @@ public class Warrior extends Player
         {
             critDamage = 5;
             enemy.health -= (totalDmg + critDamage);
+            System.out.println("Heavy Strike was a critical hit!");
+            System.out.println("You did " + totalDmg + " damage!");
         }
         
         // Normal special attack hit

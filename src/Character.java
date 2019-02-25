@@ -329,7 +329,7 @@ public class Character
                     System.out.println();
                     break;
                 case "2":
-                    p.specialAttacks(e);
+                    p.specialAttacks(p, e);
                     break;
                 case "3":
                     p.getInventory();

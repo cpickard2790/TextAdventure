@@ -40,9 +40,11 @@ public class TextAdventure
                 + "1. Warrior: Uses strength for bonus damage in battle. The"
                 + " warrior has special abilities that use rage. You build rage"
                 + " by hitting enemies.\n2. Wizard: Uses intelligence for "
-                + "bonus spell damage. Spells use mana. Mana is regenerated"
-                + " slowly each turn. Potions can also be used to regenerate"
-                + " mana.\n");
+                + "bonus spell damage(Special Attacks). Spells use mana. Mana "
+                + "is regenerated"
+                + " during battle only. Wizards speical abilities do more\n"
+                + "damage than warriors, therefore their strength modifier "
+                + "will not be added to melee attacks.\n");
         System.out.println("~Third. A twenty sided dice will be rolled three "
                 + "times. You will do this three times(one for each stat: "
                 + "Strength, Dexterity, and Intelligence. The three highest\n "
@@ -51,7 +53,9 @@ public class TextAdventure
                 + "intelligence. Dexterity will be used to see who attacks"
                 + " first.\n");
         System.out.println("Make sure you explore each room 'THOROUGHLY'! You "
-                + "can not go back to the previous room!\n");
+                + "can not go back to the previous room!\n"
+                + "You will find enemies to battle and you will also find "
+                + "items to pick up, such as weapons and health potions.\n");
     }
     
     /**
@@ -97,6 +101,8 @@ public class TextAdventure
                     break;
                 case "2":   // Create a Wizard object
                     player = new Wizard(name, 100, 0, 0, 0, 0, 100, true);
+                    Item sword1 = new Sword();
+                    player.equipWeapon(sword1);
                     player.setPlayerClass(player);
                     choice = true;
                     break;

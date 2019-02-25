@@ -231,7 +231,7 @@ public abstract class Player extends Character
     }
     
     // Abstract classes for subclasses of player
-    public abstract void specialAttacks(Enemy enemy); // subclasses spec attacks
+    public abstract void specialAttacks(Player p, Enemy e); // subclasses spec attacks
     public abstract String getHUD();                  // displays classes HUD
     public abstract void battleHUD();                 // subclasses battle HUD
     
