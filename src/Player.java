@@ -4,6 +4,7 @@ Player class extends Character creating the player character
 
 import java.util.Scanner;
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 
 public abstract class Player extends Character      
 {
@@ -113,12 +114,13 @@ public abstract class Player extends Character
         String input;
         boolean done = false;
         Scanner keyboard = new Scanner(System.in);
+        System.out.println("~~~~~~~~~~~~~~~Inventory~~~~~~~~~~~~~~~~");
         if (!backpack.isEmpty())
         {
             backpack.forEach(System.out::println);
             while (!done)
             {
-                System.out.print("What would you like to do?\n"
+                System.out.print("\nWhat would you like to do?\n"
                     + "1. Equip/Use Item\n"
                     + "2. Drop Item\n"
                     + "3. Exit Inventory\n> ");
@@ -156,17 +158,22 @@ public abstract class Player extends Character
     {
         int input;
         Scanner keyboard = new Scanner(System.in);
- 
+        System.out.println("~~~~~~~~~~~~~~~Inventory~~~~~~~~~~~~~~~~");
+        System.out.println();
         for (int i = 0; i < backpack.size(); i++)
         {
             System.out.println((i + 1) + ": " + backpack.get(i));
         }
         try
         {
+            System.out.print("\nWhat would you like to equip/use: "
+                    + "(or enter q to exit)\n> ");
             input = keyboard.nextInt();
             if (backpack.get(input - 1).getIdent() == 1)
             {
+                backpack.add(equipped);
                 equipped = backpack.get(input - 1);
+                backpack.remove(input - 1);
                 System.out.println("Item equipped");
             }
             else if (backpack.get(input - 1).getIdent() == 2)
@@ -176,6 +183,11 @@ public abstract class Player extends Character
         {
             System.out.println("Nothing in that slot...");
         }         
+        catch (InputMismatchException e)
+        {
+            System.out.println("Exiting equip/use item");
+            getInventory();
+        }
     }
     
     /**
@@ -247,7 +259,7 @@ public abstract class Player extends Character
                 "\nArmor Class: " + armorClass + "\nStrength Modifer: "
                 + strModifier + "\nDexterity Modifier: " + dexModifier +
                 "\nIntelligence Modifier: " + intelModifier + "\nArmor Class"
-                + "Modifier: " + acModifier + "\n";
+                + "Modifier: " + acModifier + "\nEquipped Weapon: " + equipped;
         return str;
     }
 }
