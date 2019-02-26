@@ -1,6 +1,8 @@
+/*
+Wizard class extends player
+*/
 
 import java.util.Scanner;
-
 
 public class Wizard extends Player
 {
