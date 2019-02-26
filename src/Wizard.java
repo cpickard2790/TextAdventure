@@ -112,6 +112,11 @@ public class Wizard extends Player
         }
     }
     
+    /**
+     * lightningBolt method
+     * @param enemy Enemy to do damage to
+     */
+    
     public void lightningBolt(Enemy enemy)
     {
         int rollDamage = Dice.RollEightSided();         // Weapon damage   

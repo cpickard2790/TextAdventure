@@ -3,7 +3,6 @@ Map class
 Creates a map for the player to move around
 */
 
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Map
@@ -108,10 +107,10 @@ public class Map
         
     public boolean chest(Item item, Player player)
     {
-        String input;
+        String input;                   // Hold keyboard input
 
-        boolean choice = false;
-        boolean chestEmpty = false;
+        boolean choice = false;         // If user made a choice
+        boolean chestEmpty = false;     // If user picked up loot
             
         while (choice == false)
         {   

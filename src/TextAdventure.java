@@ -95,9 +95,7 @@ public class TextAdventure
                 case "1":   // Create a Warrior object
                     player = new Warrior(name, 100, 0, 0, 0, 0, 0, true);
                     Item sword = new Sword();   
-                    Item axe = new Axe();
                     player.equipWeapon(sword);  
-                    player.addToInventory(axe);
                     player.setPlayerClass(player);
                     choice = true;
                     break;

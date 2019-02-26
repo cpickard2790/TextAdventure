@@ -20,8 +20,8 @@ public class Enemy extends Character
      * @param hlth  The enemy's health
      * @param str The enemy's strength
      * @param dex The enemy's dexterity
-     * @param intel
-     * @param ac 
+     * @param intel The enemy's intelligence
+     * @param ac The enemy's armor class
      */
     
     public Enemy(String n, int hlth, int str, int dex, int intel, int ac,
