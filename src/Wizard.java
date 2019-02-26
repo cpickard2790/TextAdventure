@@ -4,7 +4,19 @@ import java.util.Scanner;
 
 public class Wizard extends Player
 {
-    protected int mana;
+    protected int mana;         // Wizard's mana (special ability points)
+    
+    /**
+     * Constructor
+     * @param n The Players name
+     * @param hlth The Players health
+     * @param str   The Players strength
+     * @param dex   The Players dexterity
+     * @param intel The players intelligence
+     * @param ac The Players armor class
+     * @param m The Wizards mana
+     * @param alive Player is alive
+     */
     
     public Wizard(String n, int hlth, int str, int dex, int intel, int ac, 
             int m, boolean alive)
@@ -119,8 +131,8 @@ public class Wizard extends Player
     
     public void lightningBolt(Enemy enemy)
     {
-        int rollDamage = Dice.RollEightSided();         // Weapon damage   
-        int critDamage;                                 // Critical damage
+        int rollDamage = Dice.RollEightSided();            // Spell damage   
+        int critDamage;                                    // Critical damage
         int totalDmg = rollDamage + intelModifier;         // Total damage
         
         // Roll for hit check
@@ -146,6 +158,6 @@ public class Wizard extends Player
         else
             System.out.println("Lightning Bolt missed!");
         
-        mana -= 25;      // Rage used for special attack
+        mana -= 25;      // Mana used for special attack
     }
 }

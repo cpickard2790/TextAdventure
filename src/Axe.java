@@ -1,15 +1,14 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+ Axe class extends Item
+ Weapon
+*/
 
-/**
- *
- * @author cpick
- */
 public class Axe extends Item
 {
+    /**
+     * Constructor
+     */
+    
     public Axe()
     {
         super("One-Handed Axe", 1);
@@ -20,6 +19,7 @@ public class Axe extends Item
      * @return The random integer from Dice.RollSixSided
      */
     
+    @Override
     public int useItem()
     {
         System.out.println("Rolling 8 sided dice for weapon damage...");
@@ -34,6 +34,7 @@ public class Axe extends Item
      * @return A String representation of Sword
      */
     
+    @Override
     public String toString()
     {
         String str = super.toString() + " | Damage: Roll 8 Sided dice";

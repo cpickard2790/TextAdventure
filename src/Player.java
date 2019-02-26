@@ -243,7 +243,8 @@ public abstract class Player extends Character
     }
     
     // Abstract classes for subclasses of player
-    public abstract void specialAttacks(Player p, Enemy e); // subclasses spec attacks
+    // subclasses spec attacks
+    public abstract void specialAttacks(Player p, Enemy e);
     public abstract String getHUD();                  // displays classes HUD
     public abstract void battleHUD();                 // subclasses battle HUD
     
@@ -252,6 +253,7 @@ public abstract class Player extends Character
      * @return A String representation of Player
      */
     
+    @Override
     public String toString()
     {
         String str = super.toString() + "\nStrength: " + strength + 

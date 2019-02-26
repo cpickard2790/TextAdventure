@@ -345,6 +345,7 @@ public class Character
      * @return A reference to a String
      */
     
+    @Override
     public String toString()
     {
         String str;

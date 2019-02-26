@@ -19,6 +19,7 @@ public class Sword extends Item
      * @return The random integer from Dice.RollSixSided
      */
     
+    @Override
     public int useItem()
     {
         System.out.println("Rolling 6 sided dice for weapon damage...");
@@ -33,6 +34,7 @@ public class Sword extends Item
      * @return A String representation of Sword
      */
     
+    @Override
     public String toString()
     {
         String str = super.toString() + " | Damage: Roll 6 Sided dice";
